@@ -1,0 +1,3 @@
+rootProject.name = 'GameRumus'
+
+include ':app'

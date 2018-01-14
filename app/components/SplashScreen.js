@@ -1,28 +1,42 @@
-import React from 'react'
-import Orientation from 'react-native-orientation'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity
+} from 'react-native';
 import { Actions } from 'react-native-router-flux'
-
 
 export default class SplashScreen extends React.Component {
 
   constructor(props) {
-    super(props)
-    this.state = {
-    }
+  super(props)
+  this.state = {
   }
 
+}
+
+  componentDidMount() {
+    setTimeout(() => {Actions.welcome()}, 2000)
+  }
+
+  onClick() {
+
+  }
 
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity>
-          <Text style={styles.welcome}>
-            Welcome
-          </Text>
-        </TouchableOpacity>
+      <Image
+        style={{width: 250, height: 200}}
+        source={require('../images/logo.jpg')}/>
+        <Text style={styles.title}>
+          Master Rumus
+        </Text>
       </View>
-    )
+    );
   }
 }
 
@@ -31,14 +45,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000000',
+    backgroundColor: '#ffffff',
   },
-  welcome: {
+  title: {
     fontSize: 40,
     fontStyle: 'italic',
     fontWeight: 'bold',
     textAlign: 'center',
     margin: 10,
-    color: '#ffffff'
+    color: 'rgb(78, 87, 97)',
   },
-})
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});

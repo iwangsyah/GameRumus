@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
 
-export default class HomeScreen extends React.Component {
+export default class WelcomeScreen extends React.Component {
 
   constructor(props) {
     super(props)
@@ -14,7 +14,7 @@ export default class HomeScreen extends React.Component {
   }
 
   _toHome() {
-    Actions.pop()
+    Actions.home()
   }
 
   render() {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#000000',
   },
   welcome: {
     fontSize: 40,
@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     margin: 10,
-    color: '#000000'
+    color: '#ffffff'
   },
 })

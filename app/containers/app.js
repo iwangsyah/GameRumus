@@ -2,8 +2,10 @@ import React from 'react'
 import { Router, Scene, Stack } from 'react-native-router-flux'
 import { connect, Provider } from 'react-redux'
 
-import HomeScreen from '../components/HomeScreen'
 import SplashScreen from '../components/SplashScreen'
+import WelcomeScreen from '../components/WelcomeScreen'
+import HomeScreen from '../components/HomeScreen'
+
 
 //import store from '../store'
 
@@ -21,17 +23,22 @@ export default class App extends React.Component {
     return (
       <Router>
         <Scene key='root'>
-          <Scene key='home'
-                 component={HomeScreen}
-                 title='Home'
-                 hideNavBar={true}
-                 initial={true}
-                 />
           <Scene key='splash'
                  component={SplashScreen}
                  title='Splash'
                  hideNavBar={true}
+                 initial={true}
                  />
+          <Scene key='welcome'
+                 component={WelcomeScreen}
+                 title='Welcome'
+                 hideNavBar={true}
+                 />
+          <Scene key='home'
+                 component={HomeScreen}
+                 title='Home'
+                 hideNavBar={true}
+          />
         </Scene>
       </Router>
     )
